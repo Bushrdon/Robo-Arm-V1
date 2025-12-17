@@ -36,3 +36,5 @@ Actualmente la linea donde se define el path es la linea 11 es main.py
 Por favor asegurate de no cambiar de ninguna forma los directorios del programa. El path tiene que senalar donde se encuentra el codigo fuente de la apliacion **incluyendo** el archivo .py
 
 ## Gallery
+
+<>

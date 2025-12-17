@@ -6,6 +6,10 @@ from pathlib import Path
 
 from PIL import ImageTk, Image
 
+# Define Button Commands
+
+
+
 # Define Path for GUI images
 
 SRC = Path('D:/DATA/Desktop/RoboArm/Software/main/src/main.py').resolve().parent #Esto sera un problema con el tema de la redistribucion 
@@ -17,7 +21,6 @@ LEFT_ARROW = IMG_DIR /"left-arrow.png"
 DOWN_ARROW = IMG_DIR /"down-arrow.png"
 ARROW = IMG_DIR /"arrow.png"
 RIGHT_ARROW = IMG_DIR /"right-arrow.png"
-
 
 # GUI Composition (using pillow)
 root = Tk()
