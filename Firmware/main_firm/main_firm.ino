@@ -95,6 +95,7 @@
 
 
 //Character definitions
+//Consult main.py
 
 constexpr char MOVE_JOINT1_UP = 'q'
 constexpr char MOVE_JOINT1_DOWN = 'w'
@@ -108,10 +109,10 @@ constexpr char MOVE_JOINT3_LEFT = 't'
 
   char userInput;
 
-//Los Steppers seran llamados como articulaciones (joints) y seran enumerados como lo dice el esquematico en Hardware/  
+//Los Steppers seran llamados como articulaciones (joints) y seran enumerados como lo dice el esquematico en Hardware/ 
 
-  AccelStepper joint1();
-  AccelStepper joint2(); //Se deben especificar los pines de acuerdo a las conexiones del modulo para las siguientes dos articulaciones
+  AccelStepper joint1(); // Especificar argumentos de acuerdo a las conexiones
+  AccelStepper joint2();
   AccelStepper joint3();
 
   void setup() {
@@ -128,30 +129,39 @@ void loop() {
           //En funcion del caracter recibido ejecutar la accion correspondiente (una cadena de if else me parece mas apropiado que switch case)
 
           if (userInput == MOVE_JOINT1_UP){
-                  
-                  joint1.run(); //Especifica la accion que se quiera hacer.
-                                //Esto no es suficiente para lo que se quiere: Que un motor rote siempre que el boton
-                                //en la GUI este pulsado hasta cierto limite. Recomiendo disenar un algoritmo simple
-                                //para esta funcion. Si no me equivoco un call a run() en este estado solo hara que el motor de un step.
+
+	    while(userInput == MOVE_JOINT1_UP);
+              joint1.foo(); //Especifica la accion que se quiera hacer.
+                            //Lo que se quiere: Que un motor rote siempre que el boton
+                            //en la GUI este pulsado pero solo hasta cierto limite.
                                 
           } else if(userInput == MOVE_JOINT1_DOWN){
-              
-              // Statement para movimiento hacia abajo del joint1
+
+	    while(userInput == MOVE_JOINT1_DOWN)              
+              joint1.run(); // Statement para movimiento hacia abajo del joint1
               
           } else if(userInput == MOVE_JOINT2_UP){
+
+	    while(userInput == MOVE_JOINT2_UP);
               
               // Statement para movimiento hacia arriba del joint2
               
           } else if(userInput == MOVE_JOINT2_DOWN){
-              
+
+	    while(userInput == MOVE_JOINT2_DOWN);
+	    
               // Statement para movimiento hacia abajo del joint2
               
           } else if(userInput == MOVE_JOINT3_RIGHT){
-              
+
+	    while(userInput == MOVE_JOINT3_RIGHT);
+	    
               // Statement para movimiento hacia la derecha del joint3
               
           } else if(userInpur == MOVE_JOINT3_LEFT){
-              
+
+	    while(userInput == MOVE_JOINT3_LEFT);
+	    
               // Statement para movimiento hacia la izquierda del joint3
               
           }
