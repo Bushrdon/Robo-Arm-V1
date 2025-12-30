@@ -111,9 +111,9 @@ constexpr char MOVE_JOINT3_LEFT = 't'
 
 //Los Steppers seran llamados como articulaciones (joints) y seran enumerados como lo dice el esquematico en Hardware/ 
 
-  AccelStepper joint1(); // Especificar argumentos de acuerdo a las conexiones
-  AccelStepper joint2();
-  AccelStepper joint3();
+  AccelStepper joint1(AccelStepper::FULL2WIRE, 33, 31); // Hay que terminar de confirmar el nombre de los pines en ESP32 Arduino-Core
+  AccelStepper joint2(AccelStepper::FULL2WIRE, 30, 29);
+  AccelStepper joint3(AccelStepper::FULL2WIRE, 28, 27);
 
   void setup() {
       Serial.begin(9600);
