@@ -29,7 +29,7 @@ from PIL import ImageTk, Image
 
 # Define Path for GUI images
 
-SRC = Path('D:/DATA/Desktop/RoboArm/Software/main/src/main.py').resolve().parent #Esto sera un problema con el tema de la redistribucion 
+SRC = Path(__file__).resolve().parent  
 GUI = SRC.parent
 IMG_DIR = GUI /"img"
 
