@@ -8,28 +8,28 @@ La barrera entre lo que esta terminado y lo que potencialmente puede enferentars
 
 Firmware: 
 
-1. Framework definido: Arduino - [x]
-2. Libreria definida: AccelStepper - [x]
+1. Framework definido: Arduino
+2. Libreria definida: AccelStepper 
 
 Software:
 
-1. Lenguaje definido: Python - [x]
-2. GUI en: Tkinter - [x]
-3. Libreria para Serial UART: PySerial - [x]
+1. Lenguaje definido: Python 
+2. GUI en: Tkinter 
+3. Libreria para Serial UART: PySerial 
 
 Hardware:
 
-1. Unidad de Controlador: ESP32 - [x]
+1. Unidad de Controlador: ESP32 
 
 **Por hacer:**
 
 Hardware:
 
-1. Terminar de decidir por modelo y tipo de motor paso a paso - [ ]
+1. Terminar de decidir por modelo y tipo de motor paso a paso 
 
 	Sugiero el modelo de un bipolar NEMA17 si se pretende hacer la estructura con impresion 3d
 
-2. Decidirse por los drivers relativos al tipo de motor que se usara - [ ] 
+2. Decidirse por los drivers relativos al tipo de motor que se usara 
 
 	Sugiero el DRV8825, en general sugiero todo lo propuesto en 'Hardware/README.md'
 	
