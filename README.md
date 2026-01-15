@@ -1,6 +1,6 @@
 # Log
 
-**Cosas temrminadas y cosas por terminar:**
+**Cosas terminadas y cosas por terminar:**
 
 La barrera entre lo que esta terminado y lo que potencialmente puede enferentarse a cambios es algo delgada, pero para tener nocion de progreso esta bien basarnos en esta lista.
 
@@ -8,28 +8,28 @@ La barrera entre lo que esta terminado y lo que potencialmente puede enferentars
 
 Firmware: 
 
-1. Framework definido: Arduino
-2. Libreria definida: AccelStepper
+1. Framework definido: Arduino - [x]
+2. Libreria definida: AccelStepper - [x]
 
 Software:
 
-1. Lenguaje definido: Python
-2. GUI en: Tkinter
-3. Libreria para Serial UART: PySerial
+1. Lenguaje definido: Python - [x]
+2. GUI en: Tkinter - [x]
+3. Libreria para Serial UART: PySerial - [x]
 
 Hardware:
 
-1. Unidad de Controlador: ESP32
+1. Unidad de Controlador: ESP32 - [x]
 
 **Por hacer:**
 
 Hardware:
 
-1. Terminar de decidir por modelo y tipo de motor paso a paso
+1. Terminar de decidir por modelo y tipo de motor paso a paso - [ ]
 
 	Sugiero el modelo de un bipolar NEMA17 si se pretende hacer la estructura con impresion 3d
 
-2. Decidirse por los drivers relativos al tipo de motor que se usara 
+2. Decidirse por los drivers relativos al tipo de motor que se usara - [ ] 
 
 	Sugiero el DRV8825, en general sugiero todo lo propuesto en 'Hardware/README.md'
 	
@@ -44,6 +44,14 @@ Estructura:
  Robot Angular con 3 GDL controlado por medio de una interfaz grafica en Python/Tkinter y un microcontrolador ESP32 mediante motores paso a paso.
  
  <img src="preview.png"/>
+ 
+## Contents 
+
+|Folder | Contents |
+|-------|----------|
+|[Firmware](https://github.com/Bushrdon/Robo-Arm/tree/master/Firmware)|Archivo .ino con su documentacion|
+|[Hardware](https://github.com/Bushrdon/Robo-Arm/tree/master/Hardware)|Esquemas electronicos y documentacion|
+|[Software](https://github.com/Bushrdon/Robo-Arm/tree/master/Software)|Assests y codigo de la GUI y programacion serial|
  
 ## Features
 
