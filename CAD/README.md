@@ -1,6 +1,6 @@
 # Mechanical Structure
 
-<img src = "robot_1.png">
+<img src = "img/robot_1.png">
 
 # Notes
 
