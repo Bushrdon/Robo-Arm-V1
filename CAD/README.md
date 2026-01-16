@@ -10,8 +10,8 @@ Ningun modelo CAD de ninguna pieza oficial del robot se ha compartido hasta el m
 
 # Gallery
 
-<img src = "robot_2.png">
-<img src = "robot_3.png">
-<img src = "robot_4.png">
-<img src = "robot_5.png">
-<img src = "robot_6.png">
+<img src = "img/robot_2.png">
+<img src = "img/robot_3.png">
+<img src = "img/robot_4.png">
+<img src = "img/robot_5.png">
+<img src = "img/robot_6.png">
