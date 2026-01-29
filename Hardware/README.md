@@ -3,12 +3,12 @@
 Debes tener a la mano los siguientes **componentes**:
 
 1. **ESP32**
-2. **DRV8825 (x3)**
-3. **Bipolar Stepper (x3)**
+2. **ULN2003A (x3)**
+3. **Unipolar Stepper 24BYJ48-BJ (x3)**
 
 # Scheme
 
-<img src='img/scheme.png'>
+	Still working on it
 
 # Parts Specs
 
@@ -26,36 +26,19 @@ Mas adelante se dara a entender que es necesario hacer uso de los pines de salid
 
 Hasta donde se tiene contemplado las conexiones de este componente solo involucran 2x3 = 6 GPIOS arbitrarios que irian a los pines de cada driver para cada motor. 
 
-## DRV8825 [(Datasheet)](https://www.ti.com/lit/ds/symlink/drv8825.pdf?ts=1766098796215&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252Fes-mx%252FDRV8825)
+## ULN2003A [(Datasheet)](https://www.alldatasheet.com/datasheet-pdf/view/25566/STMICROELECTRONICS/ULN2003A.html)
 
-<img src='img/drv8825.jpg'>
+<img src='img/uln2003a.jpg'>
 
 *descripcion del componete*
 
-Para la implementacion de estos componentes se hara uso del diagrama ilustrativo de una aplicacion simple que se le tiene al driver ofrecida por el fabricante en la hoja de datos. 
+Este es un modulo muy simple que integra un arreglo de siete transistores en configuracion darlington. Su uso no envuelve mas que conectar a una fuente con los valores nominales del motor y cada canal del integrado conectarlo a un pin de motor unipolar.
 
-En general las conexiones serian siempre como sigue:
+Para mas informacion consultar con el esquema en [schemes](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/scheme_1.pdf)
 
-	A1 -------> Coil_1
-	
-	A2 -------> Coil_1
-	
-	B1 -------> Coil_2
-	
-	B2 -------> Coil_2
-	
-	nSleep ---> 3V3
-	
-	nRestart -> 3V3
-	
-	Step -----> GPIO
-	
-	Direction -----> GPIO 
-	
-Conforme las necesidades del proyecto cambien y o se presenten problemas se contemplara hacer uso de los pines restantes para permitir sus funcionalidades. Por los momentos, un wiring como el de arriba deberia ser suficiente para una aplicacion simple de Steppers. 
 
-## Bipolar Stepper
+## Unipolar Stepper [(Datasheet)](https://d25vv4z8gtre3w.cloudfront.net/fajlcsatolas/24BYJ48_28BYJ48_30BYJ46%20l%C3%A9ptet%C5%91%20motor.pdf)
 
 <img src='img/stepper.jpg'>
 
-*descripcion del componente*
+Este es un motor paso a paso unipolar cuyas conexiones se puede consultar [aqui](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/scheme_1.pdf)
