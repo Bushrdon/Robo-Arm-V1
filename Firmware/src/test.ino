@@ -1,7 +1,7 @@
 #include <AccelStepper.h>
 
-#Used by testing Arduino Code in ESP32 WROOM Model in Proteus
-#It can technically be run by a Arduino UNO if you follow the pin definitions below. 
+// Used by testing Arduino Code in ESP32 WROOM Model in Proteus
+// It can technically be run by a Arduino UNO if you follow the pin definitions below. 
 
 #define JOINT1_1 9
 #define JOINT1_2 8

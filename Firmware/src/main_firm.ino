@@ -1,7 +1,7 @@
 #include <AccelStepper.h>
 
-#Embedded Code used in phyisical ESP32 board
-#Need to be sure on pin definitions for ESP32 GPIOS yet.
+// Embedded Code used in phyisical ESP32 board
+// Need to be sure on pin definitions for ESP32 GPIOS yet.
 
 #define JOINT1_1 13
 #define JOINT1_2 14
