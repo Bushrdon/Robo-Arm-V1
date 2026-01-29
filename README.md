@@ -1,9 +1,13 @@
 # Overview
 
- Robot Angular con 3 GDL controlado por medio de una interfaz grafica en Python/Tkinter y un microcontrolador ESP32 mediante motores paso a paso.
+ Robot Angular con 3 GDL controlado por medio de una interfaz grafica en Python/Tkinter y un microcontrolador ESP32 mediante motores paso a paso unipolares.
  
  <img src="preview.png"/>
- 
+
+# Important Note
+
+This is Robo-Arm-V1 which features high level embedded code and low potency 24BYJ48-BJ stepper motors and simple GUI interface. 
+
 ## Contents 
 
 |Folder | Contents |
@@ -16,13 +20,10 @@
  
 ## Features
 
- El proyecto integra control directo de los motores paso a paso mediante una GUI simple ademas de una serie de funciones presentadas como botones extra para ejecutar patrones de movimiento especificos. 
+ El proyecto integra control directo de los motores paso a paso mediante una GUI simple. 
  
  <img src="GUI_preview.png">
  
- El robot tambien posee elementos terminales intercambeables destinados a demostrar la utilidad de los patrones de movimiento integrados en la GUI. 
- Funciones como Control de Velocidad por sensores y mecanismo complejos de transmision aun estan en contemplacion. 
-
 ## Project Structure
 
  * **Embedded** - Codigo embedido en C/C++ usando el framework de Arduino y su IDE
@@ -40,8 +41,9 @@
 
  * **Hardware**: 
    - Placa Espressif ESP32
-   - Motores Paso a Paso
-   - Cable Mini-USB
+   - Motores Paso a Paso Unipolares 24BYJ48-BJ
+   - Modulo para ULN2003A
+   - Cable USB mini USB-B (ESP32 USB Cable)
    
  * **Software**:
    - Arduino IDE
@@ -58,47 +60,3 @@
 
 	[Bajo desarrollo]
 	
-## Additional Notes:
-
- Se tendran diversos archivos README para cada seccion mayor del repositorio. El proyecto podra tener multiples ramas dedicadas a versiones nativas y a versiones de desarrollo y master. Actualmente este repositorio solo tiene la rama de master.
-
-# Log
-
-**Cosas terminadas y cosas por terminar:**
-
-La barrera entre lo que esta terminado y lo que potencialmente puede enferentarse a cambios es algo delgada, pero para tener nocion de progreso esta bien basarnos en esta lista.
-
-**Ya hecho:**
-
-Firmware: 
-
-1. Framework definido: Arduino
-2. Libreria definida: AccelStepper 
-
-Software:
-
-1. Lenguaje definido: Python 
-2. GUI en: Tkinter 
-3. Libreria para Serial UART: PySerial 
-
-Hardware:
-
-1. Unidad de Controlador: ESP32 
-
-**Por hacer:**
-
-Hardware:
-
-1. Terminar de decidir por modelo y tipo de motor paso a paso 
-
-	Sugiero el modelo de un bipolar NEMA17 si se pretende hacer la estructura con impresion 3d
-
-2. Decidirse por los drivers relativos al tipo de motor que se usara 
-
-	Sugiero el DRV8825, en general sugiero todo lo propuesto en 'Hardware/README.md'
-	
-Estructura:
-
-1. Definir si se hara usando impresion 3D o materiales mas improvisados y ligeros
-2. Definir si la estructura implementara sistemas de transmision para hacer llegar movimiento a cada articulacion o sera mas simple y solo implementara lo descrito en 'Robo-Arm/Hardware'
-3. Definir si se considera agregarle un elemento terminal o solo nos limitaremos a hacer un brazo articulado
