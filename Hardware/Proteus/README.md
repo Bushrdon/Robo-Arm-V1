@@ -3,7 +3,7 @@
 Para poner en funcionamiento esta simulacion necesitas:
 
 1. Proteus ~8.15v
-2. El arhivo .ino de este repositorio adaptado para la simualacion [test.ino](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Firmware/src/test.ino)
+2. El arhivo .ino de este repositorio adaptado para la simulacion [test.ino](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Firmware/src/test.ino)
 3. Un virtualizador de puertos seriales como VSPD
 4. El programa de python de este repositorio [main.py](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Software/main/src/main.py)
 
@@ -29,7 +29,7 @@ Selecciona el Arduino UNO y edita la ruta en la caja que dice **Program File**
 
 <img src='img/Proteus2.png'>
 
-Ahora pega la ruta del paso anterior teniendo en cuenta que en la ruta que copiaste cada slash en realidad se genero como un doble slash "\\", cambia cada uno de esos por un "\" como normalmente lo encontrarias en windows. 
+Ahora pega la ruta del paso anterior teniendo en cuenta que en la ruta que copiaste cada slash en realidad se genero como un doble slash invertido, cambia cada uno de esos por un \ como se ve en el ejemplo resaltado.
 
 ### VSPD
 
