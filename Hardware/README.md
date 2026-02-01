@@ -35,7 +35,7 @@ Hasta donde se tiene contemplado las conexiones de este componente solo involucr
 
 Este es un modulo muy simple que integra un arreglo de siete transistores en configuracion darlington. Su uso no envuelve mas que conectar a una fuente con los valores nominales del motor y cada canal del integrado conectarlo a un pin de motor unipolar.
 
-Para mas informacion consultar con el esquema en [schemes](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/scheme_1.pdf)
+Para mas informacion consultar con el esquema en [schemes](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/Robotic-Arm.pdf)
 
 
 ## Unipolar Stepper [(Datasheet)](https://d25vv4z8gtre3w.cloudfront.net/fajlcsatolas/24BYJ48_28BYJ48_30BYJ46%20l%C3%A9ptet%C5%91%20motor.pdf)
