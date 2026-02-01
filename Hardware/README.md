@@ -42,7 +42,7 @@ Para mas informacion consultar con el esquema en [schemes](https://github.com/Bu
 
 <img src='img/stepper.jpg'>
 
-Este es un motor paso a paso unipolar cuyas conexiones se puede consultar [aqui](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/scheme_1.pdf)
+Este es un motor paso a paso unipolar cuyas conexiones se puede consultar [aqui](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/Robotic-Arm.pdf)
 
 ## Servo Moros [(Datasheet)](https://www.bolanosdj.com.ar/MOVIL/ARDUINO2/MG90STowerPro.pdf)
 
