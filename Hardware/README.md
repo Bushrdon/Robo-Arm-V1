@@ -5,6 +5,7 @@ Debes tener a la mano los siguientes **componentes**:
 1. **ESP32**
 2. **ULN2003A (x3)**
 3. **Unipolar Stepper 24BYJ48-BJ (x3)**
+4. **Servomotors MG90S Tower Pro (x2)**
 
 # Scheme
 
@@ -42,3 +43,10 @@ Para mas informacion consultar con el esquema en [schemes](https://github.com/Bu
 <img src='img/stepper.jpg'>
 
 Este es un motor paso a paso unipolar cuyas conexiones se puede consultar [aqui](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/scheme_1.pdf)
+
+## Servo Moros [(Datasheet)](https://www.bolanosdj.com.ar/MOVIL/ARDUINO2/MG90STowerPro.pdf)
+
+<img src = 'img/servo.jpg'>
+
+Motores que se usaran para el elemento terminal 
+
