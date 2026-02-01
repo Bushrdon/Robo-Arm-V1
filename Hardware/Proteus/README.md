@@ -50,6 +50,6 @@ Tienes que tener todo correcto con respecto al programa en python para que funci
 
 Con la simulacion abierta y el programa abierto, chequea que ambos puertos esten siendo usados en el VSPD, se deberia ver algo asi:
 
-<img src='VSPD2.png'>
+<img src='img/VSPD2.png'>
 
 Empieza a correr la simulacion y prueba la GUI para observar el comportamiento de los motores. 
