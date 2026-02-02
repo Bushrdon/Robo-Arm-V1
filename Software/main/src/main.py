@@ -1,4 +1,3 @@
-
 from tkinter import *
 import tkinter as tk
 
@@ -7,20 +6,20 @@ from pathlib import Path
 
 from PIL import ImageTk, Image
 
-import serial
+# import serial
 
 # Initiate COM and Configure
 
-ser = serial.Serial('COM3', 9600, timeout=1)
+# ser = serial.Serial('COM3', 9600, timeout=1)
 
-if not ser.is_open:
-    ser.open()
+# if not ser.is_open:
+#   ser.open()
 
 # Define Button Commands
 
 def MOVE_UP_1():
     ser.write(b'q')
-
+    
 def MOVE_DOWN_1():
     ser.write(b'w')
 
@@ -44,6 +43,11 @@ def OPEN():
 def CLOSE():
     ser.write(b'm')
 
+# Miniterm
+
+def Open_term():
+    os.system('python -m serial.tools.miniterm COM1')
+    
 # Define Path for GUI images
 
 SRC = Path(__file__).resolve().parent  
@@ -66,8 +70,8 @@ root.title("Robot Arm")
 button = tk.Button(root, command=OPEN, text='Abrir Pinza')
 button.grid(column=1, row=1, padx=2, pady=2)
 
-button = tk.Button(root, command=CLOSE, text='Cerrar Pinza')
-button.grid(column=1, row=2, padx=2, pady=2)
+button2 = tk.Button(root, command=CLOSE, text='Cerrar Pinza')
+button2.grid(column=1, row=2, padx=2, pady=2)
 
 up_arrow_1 = ImageTk.PhotoImage(Image.open(UP_ARROW))
 btn = tk.Button(root, command = MOVE_UP_1)
@@ -113,6 +117,12 @@ joint3 = ImageTk.PhotoImage(Image.open(JOINT_3))
 label3= tk.Label(root, text = "joint_3")
 label3.grid(column=6, row=2, padx=2, pady=2)
 label3['image'] = joint3
+
+# Experiment, implementing console terminal
+
+term = tk.Button(root, command=Open_term, text='Monitor Serial')
+term.grid(column=1, row=4, padx=2, pady=2)
+
 
 root.geometry("600x400")
 root.mainloop()
