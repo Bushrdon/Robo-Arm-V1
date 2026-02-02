@@ -44,6 +44,11 @@ def OPEN():
 def CLOSE():
     ser.write(b'm')
 
+# Miniterm. Go easy with this call 'cause it does not neccesarly work
+
+def Open_term():
+    os.system('python -m serial.tools.miniterm COM1')
+
 # Define Path for GUI images
 
 SRC = Path(__file__).resolve().parent  
@@ -113,6 +118,21 @@ joint3 = ImageTk.PhotoImage(Image.open(JOINT_3))
 label3= tk.Label(root, text = "joint_3")
 label3.grid(column=6, row=2, padx=2, pady=2)
 label3['image'] = joint3
+
+# Key Bindings. Very intuitive way of GUI controlling I suppose. Need a fix bacause functions callings takes 0 positional arguments. Do not use.
+
+root.bind("w", MOVE_UP_1)
+root.bind("s", MOVE_DOWN_1)
+root.bind("a", ROTATE_LEFT)
+root.bind("d", ROTATE_RIGHT)
+root.bind("q", OPEN)
+root.bind("e", CLOSE)
+
+# Implementing console terminal. Not Working currently
+
+term = tk.Button(root, command=Open_term, text='Monitor Serial')
+term.grid(column=1, row=4, padx=2, pady=2)
+
 
 root.geometry("600x400")
 root.mainloop()
