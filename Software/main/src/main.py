@@ -36,6 +36,14 @@ def ROTATE_RIGHT():
 def ROTATE_LEFT():
     ser.write(b't')
 
+#Terminal
+    
+def OPEN():
+    ser.write(b'a')
+
+def CLOSE():
+    ser.write(b'm')
+
 # Define Path for GUI images
 
 SRC = Path(__file__).resolve().parent  
@@ -54,6 +62,12 @@ JOINT_3 = IMG_DIR /"joint_3.png"
 
 root = Tk()
 root.title("Robot Arm")
+
+button = tk.Button(root, command=OPEN, text='Abrir Pinza')
+button.grid(column=1, row=1, padx=2, pady=2)
+
+button = tk.Button(root, command=CLOSE, text='Cerrar Pinza')
+button.grid(column=1, row=2, padx=2, pady=2)
 
 up_arrow_1 = ImageTk.PhotoImage(Image.open(UP_ARROW))
 btn = tk.Button(root, command = MOVE_UP_1)
