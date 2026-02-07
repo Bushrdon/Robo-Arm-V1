@@ -9,6 +9,8 @@ from PIL import ImageTk, Image
 
 import serial
 
+import monitor
+
 # Initiate COM and Configure
 
 
@@ -23,7 +25,7 @@ def  set_port(port):
         ser = serial.Serial(port, 9600, timeout=1)
 
     except Exception as e:
-        printf("Error")
+        print("Error")
 
 # Define Button Commands
 
@@ -59,10 +61,10 @@ def OPEN():
 def CLOSE():
     ser.write(b'm')
 
-# Miniterm. Go easy with this call 'cause it does not neccesarly work
+#Monitor
 
-#def Open_term():
-#    os.system('python -m serial.tools.miniterm COM1')
+def OPEN_TERMINAL():
+    os.system('python monitor.py')
     
 # Define Path for GUI images
 
@@ -84,14 +86,19 @@ root = Tk()
 root.title("Robot Arm")
 
 m = Menu(root)
-m_config=Menu(m)
+m_config=Menu(m, tearoff=0)
 m.add_cascade(menu=m_config, label="Configuracion")
-m_ports=Menu(m_config)
+m_ports=Menu(m_config, tearoff=0)
 m_config.add_cascade(menu=m_ports, label="Seleccionar Puerto Serial()")
 m_ports.add_command(label="Serial Ports")
 m_ports.add_command(label="COM1", command=lambda: set_port("COM1"))
 m_ports.add_command(label="COM2", command=lambda: set_port("COM2"))
 m_ports.add_command(label="COM3", command=lambda: set_port("COM3"))
+m_ports.add_command(label="COM4", command=lambda: set_port("COM4"))
+m_ports.add_command(label="COM5", command=lambda: set_port("COM5"))
+m_monitor=Menu(m, tearoff=0)
+m.add_cascade(menu=m_monitor, label="Vista")
+m_monitor.add_command(label="Abrir Monitor Serial", command=OPEN_TERMINAL)
 root['menu'] = m
 
 button = tk.Button(root, command=OPEN, text='Abrir Pinza')
@@ -150,21 +157,6 @@ joint3 = ImageTk.PhotoImage(Image.open(JOINT_3))
 label3= tk.Label(root, text = "joint_3")
 label3.grid(column=7, row=2, padx=2, pady=2)
 label3['image'] = joint3
-
-# Key Bindings. Very intuitive way of GUI controlling I suppose. Need a fix bacause functions callings takes 0 positional arguments. Do not use.
-
-# root.bind("<Key-w>", MOVE_UP_1)
-# root.bind("s", MOVE_DOWN_1)
-# root.bind("a", ROTATE_LEFT)
-# root.bind("d", ROTATE_RIGHT)
-# root.bind("q", OPEN)
-# root.bind("e", CLOSE)
-
-# Implementing console terminal. Not Working currently
-
-# term = tk.Button(root, command=Open_term, text='Monitor Serial')
-# term.grid(column=1, row=4, padx=2, pady=2)
-
 
 root.geometry("600x400")
 root.mainloop()
