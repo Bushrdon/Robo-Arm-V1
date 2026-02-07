@@ -35,7 +35,7 @@ Servo joint4; //4th Joint
 
 //Variables
 
-int steps = 10;
+int steps = 200;
 int POS = 90;
 //Functions
 
@@ -46,8 +46,10 @@ void setup()
 {     
    Serial.begin(9600);
 
-   joint1.setMaxSpeed(100);
-   joint1.setSpeed(10);
+   monitor_welcome();
+
+   joint1.setMaxSpeed(800);
+   joint1.setAcceleration(300);
    
    joint2.setMaxSpeed(100);
    joint2.setSpeed(10);
@@ -56,58 +58,68 @@ void setup()
    joint3.setSpeed(10);
 
    servo1.write(POS);
-  joint4.write(POS);
+   joint4.write(POS);
    servo1.attach(PINZA_1);          
-  joint4.attach(JOINT4);
+   joint4.attach(JOINT4);
 }
 
 void loop() {   
-
+  joint1.run();
+  joint2.run();
+  joint3.run();
+  
   if(Serial.available()>0){
     int target_1 = POS;
     int target_2 = POS;
     char UserInput = Serial.read();
 
-    if(UserInput == 't'){
+    if(UserInput == 's'){
+      if (steps>800){
+        steps=800;
+      } else
+        steps+=200;
       joint1.moveTo(steps);
       Serial.print("Moving Joint 1 +\n");
-      joint1.run();
-      joint1.stop();
+      Serial.print("Current Position: ");
+      Serial.print(joint1.currentPosition());
+      Serial.print("\n");
 
-    } else if (UserInput == 's'){
+    } else if (UserInput == 't'){
+      if (steps>800){
+        steps=800;
+      } else
+        steps+=200;
       joint1.moveTo(-steps);
       Serial.print("Moving Joint 1 -\n");
-      joint1.run();
-      joint1.stop();
+      Serial.print("Current Position: ");
+      Serial.print(joint1.currentPosition());
+      Serial.print("\n");
+
     } else if (UserInput == 'e'){
       joint2.moveTo(steps);
       Serial.print("Moving Joint 2 +\n");
-      joint2.run();
-      joint2.stop();
+
     } else if (UserInput == 'r'){
       joint2.moveTo(-steps);
       Serial.print("Moving Joint 2 -\n");
-      joint2.run();
-      joint2.stop();
+
     } else if (UserInput == 'q'){
       joint3.moveTo(steps);
       Serial.print("Moving Joint 3 +\n");
-      joint3.run();
-      joint3.stop();
+
     } else if (UserInput == 'w'){
       joint3.moveTo(-steps);
       Serial.print("Moving Joint 3 -\n");
-      joint3.run();
-      joint3.stop();
+
     } else if(UserInput == 'a'){
       Serial.print("Opening Clamp \n");
       open_clamp(target_1);
     } else if(UserInput == 'm'){
       Serial.print("Closing Clamp \n");
-      close_clamp(target_1);
+      close_clamp( target_1);
     } else if(UserInput == 'o'){
       Serial.print("Elevating Clamp\n");
-      move_upwards(target_2);
+      move_upwards (target_2);
     } else if (UserInput == 'p'){
       Serial.print("Descending Clamp\n");
       move_downwards(target_2);
@@ -169,4 +181,21 @@ void move_downwards(int target_2){
   delay(20);
   joint4.write(90);
   }
+}
+
+void monitor_welcome(){
+  Serial.print("/***************************************/\n");
+  Serial.print("This is a Serial Monitor 4-DOF Robotic Arm\n");
+  Serial.print("/***************************************/\n");
+  Serial.print("\n");
+  Serial.print("Joint 1 Current Position: \n");
+  Serial.print(joint1.currentPosition());
+  Serial.print("\n");
+  Serial.print("Joint 2 Current Position: \n");
+  Serial.print(joint2.currentPosition());
+  Serial.print("\n");
+  Serial.print("Joint 3 Current Position: \n");
+  Serial.print(joint3.currentPosition());
+  Serial.print("\n");
+  Serial.print("/***************************************/\n");
 }
