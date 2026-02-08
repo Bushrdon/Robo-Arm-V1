@@ -1,5 +1,4 @@
-
-from tkinter import *
+om tkinter import *
 import tkinter as tk
 
 import os
@@ -9,7 +8,6 @@ from PIL import ImageTk, Image
 
 import serial
 
-import monitor
 
 # Initiate COM and Configure
 
