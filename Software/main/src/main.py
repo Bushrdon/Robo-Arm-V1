@@ -1,3 +1,4 @@
+
 from tkinter import *
 import tkinter as tk
 
@@ -8,11 +9,9 @@ from PIL import ImageTk, Image
 
 import serial
 
+ser = None
 
 # Initiate COM and Configure
-
-
-ser = None
 
 def  set_port(port):
     global ser
@@ -20,11 +19,12 @@ def  set_port(port):
         if ser and ser.is_open:
             ser.close()
 
-        ser = serial.Serial(port, 9600, timeout=1)
+        ser = serial.Serial(port, 9600, timeout=0.1)
 
     except Exception as e:
         print("Error")
 
+        
 # Define Button Commands
 
 def MOVE_UP_1():
@@ -59,10 +59,10 @@ def OPEN():
 def CLOSE():
     ser.write(b'm')
 
-#Monitor
+#Abort Command
 
-def OPEN_TERMINAL():
-    os.system('python monitor.py')
+def ABORT():
+    ser.write(b'l')
     
 # Define Path for GUI images
 
@@ -96,7 +96,7 @@ m_ports.add_command(label="COM4", command=lambda: set_port("COM4"))
 m_ports.add_command(label="COM5", command=lambda: set_port("COM5"))
 m_monitor=Menu(m, tearoff=0)
 m.add_cascade(menu=m_monitor, label="Vista")
-m_monitor.add_command(label="Abrir Monitor Serial", command=OPEN_TERMINAL)
+m_monitor.add_command(label="Abrir Monitor Serial")
 root['menu'] = m
 
 button = tk.Button(root, command=OPEN, text='Abrir Pinza')
@@ -142,12 +142,12 @@ label2.grid(column=5, row=2, padx=2, pady=2)
 label2['image'] = joint2
 
 right_arrow = ImageTk.PhotoImage(Image.open(RIGHT_ARROW))
-btn5= tk.Button(root, command = ROTATE_RIGHT)
+btn5= tk.Button(root, command=ROTATE_RIGHT)
 btn5.grid(column=8, row=2, padx=2, pady=2)
 btn5['image']=right_arrow
 
 left_arrow = ImageTk.PhotoImage(Image.open(LEFT_ARROW))
-btn6= tk.Button(root, command = ROTATE_LEFT)
+btn6= tk.Button(root, command=ROTATE_LEFT)
 btn6.grid(column=6, row=2, padx=2, pady=2)
 btn6['image']=left_arrow
 
@@ -155,6 +155,9 @@ joint3 = ImageTk.PhotoImage(Image.open(JOINT_3))
 label3= tk.Label(root, text = "joint_3")
 label3.grid(column=7, row=2, padx=2, pady=2)
 label3['image'] = joint3
+
+abort= tk.Button(root, text="Apagar", command=ABORT)
+abort.grid(column=1, row=5, padx=2, pady=2)
 
 root.geometry("600x400")
 root.mainloop()
