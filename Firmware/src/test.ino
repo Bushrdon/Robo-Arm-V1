@@ -4,7 +4,7 @@
 
 // Arduino Test Code
 
-//Steppers 
+//Steppers
 
 #define JOINT1_1 9
 #define JOINT1_2 8
@@ -35,14 +35,14 @@ Servo joint4; //4th Joint
 
 //Variables
 
-int steps1 = 80;
-int steps2 = 80;
-int steps3 = 80;
+int steps1=200;
+int steps2=200;
+int steps3=200;
 
 int POS = 90;
 
-unsigned long received_last_time = 0;
-const int timeout = 150;
+//unsigned long received_last_time = 0;
+//const int timeout = 200;
 
 
 //Functions
@@ -51,28 +51,29 @@ void open_clamp(int target_1);
 void close_clamp(int target_1);
 
 void setup()
-{     
+{
    Serial.begin(9600);
 
    monitor_welcome();
 
    joint1.setMaxSpeed(800);
    joint1.setAcceleration(300);
-   
+
    joint2.setMaxSpeed(800);
    joint2.setAcceleration(300);
-   
+
    joint3.setMaxSpeed(800);
    joint3.setAcceleration(300);
 
    servo1.write(POS);
    joint4.write(POS);
-   servo1.attach(PINZA_1);          
+
+   servo1.attach(PINZA_1);
    joint4.attach(JOINT4);
 }
 
-void loop() {   
-  
+void loop() {
+
   joint1.run();
   joint2.run();
   joint3.run();
@@ -84,16 +85,16 @@ void loop() {
     char UserInput = Serial.read();
 
     if(UserInput == 's'){
-      
+
       joint1.moveTo(steps1);
       Serial.print("Moving Joint 1 +\n");
       Serial.print("Current Position: ");
       Serial.print(joint1.currentPosition());
       Serial.print("\n");
-      steps1+=80;
+      steps1+=200;
 
     } else if (UserInput == 't'){
-      steps1=steps1-80;
+      steps1=steps1-200;
       joint1.moveTo(steps1);
       Serial.print("Moving Joint 1 -\n");
       Serial.print("Current Position: ");
@@ -107,10 +108,10 @@ void loop() {
       Serial.print("Current Position: ");
       Serial.print(joint2.currentPosition());
       Serial.print("\n");
-      steps2+=80;
+      steps2+=200;
 
     } else if (UserInput == 'e'){
-      steps2=steps2-80;
+      steps2=steps2-200;
       joint2.moveTo(steps2);
       Serial.print("Moving Joint 2 +\n");
       Serial.print("Current Position: ");
@@ -124,10 +125,10 @@ void loop() {
       Serial.print("Current Position: ");
       Serial.print(joint3.currentPosition());
       Serial.print("\n");
-      steps3+=80;
+      steps3+=200;
 
     } else if (UserInput == 'q'){
-      steps3=steps3-80;
+      steps3=steps3-200;
       joint3.moveTo(steps3);
       Serial.print("Moving Joint 3 +\n");
       Serial.print("Current Position: ");
@@ -154,7 +155,7 @@ void loop() {
 }
 
 void open_clamp(int target_1){
-      target_1 = 110;
+      target_1 = 105;
       while(POS != target_1){
       if(POS < target_1){
         POS++;
@@ -168,7 +169,7 @@ void open_clamp(int target_1){
 }
 
 void close_clamp(int target_1){
-      target_1 = 70;
+      target_1 = 75;
       while(POS != target_1){
       if(POS < target_1){
         POS++;
@@ -210,9 +211,9 @@ void move_downwards(int target_2){
 }
 
 void abort(){
-  joint1.stop();
-  joint2.stop();
-  joint3.stop();
+  joint1.disableOutputs();
+  joint2.disableOutputs();
+  joint3.disableOutputs();
 }
 
 void monitor_welcome(){
