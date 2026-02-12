@@ -1,8 +1,6 @@
 # Overview
 
  Robot Angular con 4 GDL controlado por medio de una interfaz grafica en Python/Tkinter y un microcontrolador ATmega328p mediante motores paso a paso unipolares y servo motores.
- 
- <img src="preview.png"/>
 
 # Important Note
 
