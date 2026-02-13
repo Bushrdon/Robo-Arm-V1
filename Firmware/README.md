@@ -1,9 +1,7 @@
 # Getting Started
 
-El codigo deberia de poder ser compilado como cualquier dispositivo AVR con las especificaciones del Arduino UNO. 
-Selecciona el Dev Board desde el IDE de Arduino y el puerto serial, luego sube el codigo a la tarjeta. 
-
-Para flashear el codigo en la tarjeta sin el arduino IDE puedes utilizar el Makefile dejado junto con el codigo fuente mas las herramientas de AVR. 
+The code should be able to be compiled for any AVR device with the specifications of the Arduino UNO. Select the Dev Board and the serial port from the Arduino IDE, then upload the code to the board.
+To flash the code onto the board without the Arduino IDE, you can use a Makefile along with the source code and the AVR toolchain.
 
 # Code Structure
 
@@ -74,18 +72,8 @@ You can check functions listed here:
 
 # Libraries
 
-Como se explica en el README de inicio, las liberias que debes tener instalados en tu IDE son:
+This project involves Arduino libraries like serial.h and servo.h
+But you need to implement Accelstepper library also. Since it is not an Arduino library you can download it here: 
 
  * [AccelStepper](https://github.com/swissbyte/AccelStepper)
- * [Serial UART](https://github.com/espressif/arduino-esp32/tree/2b15254d0b28329dc7af3fd8f9757e125e682660)
-
-Se han barajeado algunas opciones sobre la libreria para el control de motores paso a paso, pero hasta ahora el unico que parece marcar un standar es la libreria AccelStepper. 
-
-# Lib Docs
-
-Deberias encontrar documentacion de las librierias usadas aqui:
-
- * [AccelStepper](https://www.airspayce.com/mikem/arduino/AccelStepper/)
-
- * [Serial (UART)](https://github.com/espressif/arduino-esp32/blob/2b15254d0b28329dc7af3fd8f9757e125e682660/docs/en/api/serial.rst)
 
