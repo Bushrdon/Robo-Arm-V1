@@ -4,7 +4,9 @@
 
 # Important Note
 
-This is Robo-Arm-V1 which features high level embedded code and low potency 24BYJ48-BJ stepper motors, simple GUI interface. A Robotic-Arm-V2 will be developed soon. Or never.
+This is Robo-Arm-V1 which features high level embedded code and low potency 24BYJ48-BJ stepper motors, simple GUI interface. 
+This repository is archived since I don't find any use mantaining the project anymore.
+A Robotic-Arm-V2 will be developed soon, or not. 
 
 ## Contents 
 
