@@ -1,6 +1,6 @@
 # Overview
 
- Robot Angular con 4 GDL controlado por medio de una interfaz grafica en Python/Tkinter y un microcontrolador ATmega328p mediante motores paso a paso unipolares y servo motores.
+ 
 
 # Important Note
 
@@ -10,39 +10,39 @@ This is Robo-Arm-V1 which features high level embedded code and low potency 24BY
 
 |Folder | Contents |
 |-------|----------|
-|[CAD](https://github.com/Bushrdon/Robo-Arm/tree/master/CAD)|Archivos CAD de modelos 3D|
-|[Firmware](https://github.com/Bushrdon/Robo-Arm/tree/master/Firmware)|Archivo .ino con su documentacion|
-|[Hardware](https://github.com/Bushrdon/Robo-Arm/tree/master/Hardware)|Esquemas electronicos, documentacion y simulacion en proteus 8.15|
-|[Software](https://github.com/Bushrdon/Robo-Arm/tree/master/Software)|Assests y codigo de la GUI y programacion serial|
+|[CAD](https://github.com/Bushrdon/Robo-Arm/tree/master/CAD)|Notes on 3D Models and Robot Structure|
+|[Firmware](https://github.com/Bushrdon/Robo-Arm/tree/master/Firmware)|Arduino Code|
+|[Hardware](https://github.com/Bushrdon/Robo-Arm/tree/master/Hardware)|Electric Schematic, Documentation and Simulation made in Proteus 8.15|
+|[Software](https://github.com/Bushrdon/Robo-Arm/tree/master/Software)|GUI Code and Assets|
  
 ## Features
 
- El proyecto integra control directo de los motores mediante una GUI simple, al mismo tiempo soporta manejo de puertos seriales configurables y funciones de apagado. 
+This project features direct stepper and servomotors movement control using a simple GUI and Serial communication with a Host PC. 
  
  <img src="GUI_preview.png">
  
 ## Project Structure
 
- * **Embedded** - Codigo embedido en C/C++ usando el framework de Arduino y su IDE
+ * **Embedded** - Embedded code using Arduino Framework 
 
- * **Tkinter Code** - Codigo de alto nivel para la interfaz grafica y representacion visual del robot que implementa la libreria Pillow para el manejo de imagenes
+ * **Tkinter Code** - GUI Code written in Python
 
- * **Pyserial Code** - Codigo que define el backend para comunicacion serial entre la PC y el microcontrolador
+ * **Pyserial Code** - Serial Backend for microcontroller and Host PC communication
 
- * **Schematics** - Documentacion referente a las conexiones y montaje general del hardware implementado
- 
- * **CAD Models** - Referencia de modelos 3D usados para el robot.
+ * **Schematics** - Electrical wiring reference
+    
+ * **CAD Models** - 3D Models reference
 
 
 ## Prerequisites 
 
  * **Hardware**: 
-   - Placa Arduino UNO (O compatible)
-   - Motores Paso a Paso Unipolares 24BYJ48-BJ
-   - Modulo para ULN2003A
-   - Servomotores MG90S
-   - Cable USB mini USB-B (ESP32 USB Cable)
-   
+   - Arduino UNO Dev Board (O compatible)
+   - Unipolar Stepper Motors 24BYJ48-BJ
+   - Driver Module ULN2003A
+   - Servomotors MG90S
+   - Arduino USB Cable (USB A to B)
+        
  * **Software**:
    - Arduino IDE
    - Python 3.13
