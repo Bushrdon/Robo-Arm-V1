@@ -1,52 +1,44 @@
 # Part List
 
-Debes tener a la mano los siguientes **componentes**:
+Consider gather the exact following parts, otherwise you will encounter problems building the structure:
 
-1. **ESP32**
-2. **ULN2003A (x3)**
-3. **Unipolar Stepper 24BYJ48-BJ (x3)**
+1. **ATmega328p (or any compatible board)**
+2. **ULN2003A (x5)**
+3. **Unipolar Stepper 24BYJ48-BJ (x5)**
 4. **Servomotors MG90S Tower Pro (x2)**
 
-# Scheme
+# Power Supply
 
-	Still working on it
+|Part|Quantity|Voltage (V)|Initial Current (mA)|Total Current (A)|Potency (W)|
+|----|--------|-----------|-------------------|-----------------|-----------|
+|24BYJ48-BJ|5|5v|160mA|800mA|9.6W|
+|MG90S|2|5v|500mA|1000mA|5W|
+|Arduino UNO|2|5v|50mA|50mA|0.25W|
+|Total||5v||1850mA|14.85W|
 
 # Parts Specs
 
-Especificaciones y comentarios referentes a los componentes del proyecto.
-
-## ESP32 [(Datasheet)](https://cdn.sparkfun.com/datasheets/IoT/esp32_datasheet_en.pdf)
-
-<img src='img/esp32.jpg'>
-
-*descripcion del componente*
-
-El sistema esta pensado para ser usado en conjunto con una computadora que corra el software con la interfaz de usuario. Dado que el metodo de comunicacion entre el microcontrolador y la computadora es por medio Serial UART, se entiende que el microcontrolador ya dispondria de una fuente de alimentacion por lo que esta no sera necesario a la hora de la aplicacion.  
-
-Mas adelante se dara a entender que es necesario hacer uso de los pines de salida de voltaje integrados en el esp32 para fines de alimentacion.
-
-Hasta donde se tiene contemplado las conexiones de este componente solo involucran 2x3 = 6 GPIOS arbitrarios que irian a los pines de cada driver para cada motor. 
+Some comments:
 
 ## ULN2003A [(Datasheet)](https://www.alldatasheet.com/datasheet-pdf/view/25566/STMICROELECTRONICS/ULN2003A.html)
 
 <img src='img/uln2003a.jpg'>
 
-*descripcion del componete*
+First of all, check the [schemes](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/Robotic-Arm.pdf)
 
-Este es un modulo muy simple que integra un arreglo de siete transistores en configuracion darlington. Su uso no envuelve mas que conectar a una fuente con los valores nominales del motor y cada canal del integrado conectarlo a un pin de motor unipolar.
-
-Para mas informacion consultar con el esquema en [schemes](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/Robotic-Arm.pdf)
-
+Note that the "mirror" steppers use an inverted order driving signals, so just take the same output pins in the board and invert the order.
+Otherwise steppers will perform opposite movement when installed in the robot structure. 
 
 ## Unipolar Stepper [(Datasheet)](https://d25vv4z8gtre3w.cloudfront.net/fajlcsatolas/24BYJ48_28BYJ48_30BYJ46%20l%C3%A9ptet%C5%91%20motor.pdf)
 
 <img src='img/stepper.jpg'>
 
-Este es un motor paso a paso unipolar cuyas conexiones se puede consultar [aqui](https://github.com/Bushrdon/Robo-Arm-V1/blob/master/Hardware/schemes/Robotic-Arm.pdf)
+Consider that these stepper motors consume a reasonable amount of current when pressed enough by the structure load.
+So, considering the joints 2 and 3 uses indeed 2 steppers, it is highly recommended to use more that 2 Amperes for this motors. This is probaly due to the fact that at start there's a small up-edge in current.
+At the same time code does not manage fully well static steppers, so they will be consuming power even if they are not moving. 
 
 ## Servo Moros [(Datasheet)](https://www.bolanosdj.com.ar/MOVIL/ARDUINO2/MG90STowerPro.pdf)
 
 <img src = 'img/servo.jpg'>
 
-Motores que se usaran para el elemento terminal 
-
+It would suggest using a external power supply since in the current design it uses Arduino UNO votlage regulator which is not neccesarily great.
