@@ -22,7 +22,7 @@ def  set_port(port):
         ser = serial.Serial(port, 9600, timeout=0.1)
 
     except Exception as e:
-        print("Error")
+        print("Error opening serial port. Not Connected")
 
         
 # Define Button Commands
