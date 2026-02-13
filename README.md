@@ -1,12 +1,12 @@
 # Overview
 
- 4 DOF Angular Robotic Arm with GUI Controlling Software using Python/Tkinter  
+[ARCHIVED] 4 DOF Angular Robotic Arm with GUI Controlling Software using Python/Tkinter  
 
 # Important Note
 
-This is Robo-Arm-V1 which features high level embedded code and low potency 24BYJ48-BJ stepper motors, simple GUI interface. 
-This repository is archived since I don't find any use mantaining the project anymore.
-A Robotic-Arm-V2 will be developed soon, or not. 
+This is Robo-Arm-V1 which features high level embedded code and low potency 24BYJ48-BJ stepper motors, simple GUI interface.  
+This repository is archived since I don't find any use mantaining the project anymore.  
+A Robotic-Arm-V2 will be developed soon, or not.   
 
 ## Contents 
 
