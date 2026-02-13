@@ -1,6 +1,6 @@
 # Getting Started
 
-Para correr el codigo puedes simplemente correr el codigo desde la terminal estando el directorio apropiado:
+For running, just move to the directory and enter:
 
 	python main.py
 
