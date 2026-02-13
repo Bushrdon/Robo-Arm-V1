@@ -1,32 +1,22 @@
 # Getting Started
 
-Con esta guia podras poner poner todo el orden para usar el programa de una forma mas practica. 
-
 Para correr el codigo puedes simplemente correr el codigo desde la terminal estando el directorio apropiado:
 
 	python main.py
 
 ## Prerequisites
 
-Asegurate de tener una version estable y reciente de python 3
-Tambien debes tener instalados los siguientes modulos:
+You need to have python 3.13
+Also, install all this modules for the program to work properly:
 
   - Pillow
   - Pyserial
-  - pathlib (modulo que viene por defecto con python)
-  - Tkinter (modulo que viene por defecto con python)
 
-## Things to Do:
+The program also utilizes Tkinter and Pathlib but they are already installed if you have python install. 
 
-Poner botones para controlar el elemento terminal. Habria que ponerle un asset para la pinza.
+## Features:
 
-Me gustaria que hubiera una parte donde se puedan leer las acciones que se realizan, es decir: que lo que se pueda leer en la terminal cuando se corra el codigo que tambien se pueda visualizar en la GUI, cosas como "Enviado 'q' Moviendo Joint 3" o algo por el estilo. Podriamos hacer algo analogo a esto. Pero estaria genial adaptarle un "Serial monitor" como en el arduino IDE.
-
-Me gustataria que se pudiera regular la cantidad de pasos que se de. Con una barra de volumen se podria implementar. Esto se logra con el widget de [Scale](https://tkdocs.com/tutorial/morewidgets.html#scale), en el tutorial se explica mejor la idea, tengo que hacer mas flexible el codigo del archivo .ino para que la variable de "steps" se modifique en cada articulacion y que el Scale se aplica para toda articulacion.
-
-Podriamos tambien implementar una opcion para configurar el puerto serial. Una ventana que te dejara configurar los puertos que quieras utilizar, seria una lista de "COM" del 1 hasta el 15 solo para mantenerlo simple y no poner algo asi como una funcion que chequee los puertos disponibles y luego los muestre, aunque no crea que sea dificil de implementar. Esto se logra con el widget [Listbox](https://tkdocs.com/tutorial/morewidgets.html#listbox) segun parece. Ahi se ve el tutorial, tendria que preparar el backend con Pyserial para eso.
-
-
-## Gallery
-
-Still working on it!
+The program is based mainly on the idea that you can control direct motor movement in both directions. In case of servos, you have a button for opening and closing the clamp.
+A button for abort stepper movement disabling outputs can also be found. 
+"View" submenu is currently non-functional at all. But it was intended to show serial monitor inside the application. 
+The program also features a simple COM Port manager. There's no great exception hnadling system, just some Error message shown in the terminal, so it is not robust enough.
