@@ -41,4 +41,5 @@ At the same time code does not manage fully well static steppers, so they will b
 
 <img src = 'img/servo.jpg'>
 
+As it is suggest in another part of this guide. You will need to use 360 degrees servos also called conitnuous rotation servo motors. If you happen to get 180 degrees it is actually better but you will need to re-write some code considering the difference between the two types. 
 It would suggest using a external power supply since in the current design it uses Arduino UNO votlage regulator which is not neccesarily great.
